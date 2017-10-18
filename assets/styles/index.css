@@ -1,0 +1,10 @@
+/* Index CSS Document */
+
+@import url(normalize.css);
+@import url(fonts.css);
+
+body {
+	margin: 0;
+	font-family: Coquette, "Coquette Bold", "Coquette Light";
+	font-style: normal;
+}
