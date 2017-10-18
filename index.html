@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Taverna Creative</title>
+<script src="https://unpkg.com/vue"></script>
+</head>
+
+
+<body>
+
+	<h1 id="app">{{ message }}</h1>
+
+	<article id="menu">
+		<h2>Menu</h2>
+		<h3>Menu du jour</h3>
+		<p>Les nouveauté, fraîches, du jour.</p>
+		<h3>Menu Première découverte</h3>
+		<ul>
+			<li>La plateforme Creative Cloud</li>
+			<li>Les applications mobiles</li>
+			<li>Les applications desktop</li>
+			<li>Les services collaboratifs</li>
+			<li>Les services de ressources</li>
+			<li>Les services communautaires</li>
+		</ul>
+		<h3>Menu à la carte</h3>
+		<ul>
+			<li>L'illustration</li>
+			<li>La photographie</li>
+			<li>La peinture numérique</li>
+			<li>La direction artistique</li>
+			<li>La mise en page</li>
+			<li>Le design d'écrans</li>
+			<li>L'animation vectorielle</li>
+			<li>Le design web</li>
+			<li>Le montage video</li>
+			<li>Les effets spéciaux</li>
+			<li>L'animation de personnages</li>
+			<li>La 3 dimentions</li>
+		</ul>	
+	</article>
+	
+	<article id="order">
+		<h2>Votre commande</h2>
+		<ol>
+			<todo-item v-for="item in order" :todo="item" :key="item.id"></todo-item>
+		</ol>
+	</article>
+	
+	<script src="assets/scripts/index.js"></script>
+</body>
+</html>
