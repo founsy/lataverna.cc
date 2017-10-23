@@ -1,5 +1,6 @@
 
-// a variable map in Sass
+// Global Colors
+
 $colors: (
   primary_red: #de2845,
   primary_black: #000000,
@@ -7,6 +8,8 @@ $colors: (
   light_grey: #999999,
   light_brown: #E8EAED,
 );
+
+// Global tags
 
 html, body {
 	margin: 0;
@@ -35,10 +38,12 @@ footer > p {
 	font-size: 0.8rem;
 }
 
+// The Menu
+
 #menu {
 	min-width: 320px;
 	max-width: 640px;
-	margin: 0 auto;
+	margin: 0 auto 30px auto;
 	border: 1px solid map-get($colors, primary_red);
 	background-color: map-get($colors, light_brown);
 	border-radius: 20px;
@@ -57,35 +62,56 @@ footer > p {
 		background-position: center center;
 		background-size: 30%;
 	}
-}
-.formule {
-	padding: 0;
-	text-align: left;
-	.menu-item {
-		a {
-			padding: 0.5em 1em 0em 1em;
-			display: block;
-			height: 30px;
-			text-decoration: none;
-			color: map-get($colors, dark_grey);
-			display: flex;
-			flex-direction: row;
-			label {
-				margin-right: 1em;
+	.formule {
+		padding: 0;
+		text-align: left;
+		.menu-item {
+			a {
+				padding: 0.5em 1em 0em 1em;
+				display: block;
+				height: 30px;
+				text-decoration: none;
+				color: map-get($colors, dark_grey);
+				display: flex;
+				flex-direction: row;
+				label {
+					margin-right: 1em;
+				}
+				.dotted-line {
+					flex: 1;
+					align-self: center;
+					border-bottom: 1px dotted map-get($colors, light_grey);
+					margin-top: 5px;
+				}
+				.duration {
+					margin-left: 1em;
+				}
 			}
-			.dotted-line {
-				flex: 1;
-				align-self: center;
-				border-bottom: 1px dotted map-get($colors, light_grey);
-				margin-top: 5px;
-			}
-			.duration {
-				margin-left: 1em;
+			a:hover {
+				color: white;
+				background-color: map-get($colors, primary_red);
 			}
 		}
 		a:hover {
 			color: white;
 			background-color: map-get($colors, primary_red);
 		}
+	}
+}
+
+// The Order
+
+#order {
+	position: fixed;	
+	display: block;
+	z-index: 100;
+	max-height: 60px;
+	bottom: 0; left: 0; right: 0;
+	background-color: rgba(255,255,255,0.9);
+	-webkit-box-shadow: 0px -1px 10px 0px rgba(0,0,0, 0.40);
+	box-shadow: 0px -1px 10px 0px rgba(0,0,0, 0.40);
+	text-align: center;
+	h2 {
+		text-align: center;
 	}
 }
