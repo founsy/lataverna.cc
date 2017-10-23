@@ -2,50 +2,62 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Taverna Creative</title>
 <script src="https://unpkg.com/vue"></script>
-<link href="/assets/styles/index.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://use.typekit.net/uch8xsn.css">
+<link  rel="stylesheet" href="assets/styles/index.css" type="text/css">
 </head>
 
 <body>
-
-	<h1 id="app">{{ message }}</h1>
-
+	
+	<header>
+	    <h1>{{site_title}}</h1>
+	</header>
+	
 	<article id="menu">
-		<h3>Formule "du jour"</h3>
-		<p>Les nouveauté, toute fraîches, pêchées ce matin.</p>
-		<h3>Formule "Première découverte"</h3>
-		<ul>
-			<li>La plateforme Creative Cloud</li>
-			<li>Les applications mobiles</li>
-			<li>Les applications desktop</li>
-			<li>Les services collaboratifs</li>
-			<li>Les services de ressources</li>
-			<li>Les services communautaires</li>
+		<h2>Formule "du jour"</h2>
+		<ul class="formule today">
+			<menu-item 
+				v-for="item in todayList" 
+				:menu="item" 
+				:key="item.id"></order-item>
 		</ul>
-		<h3>Formule "à la carte"</h3>
-		<ul>
-			<li>L'illustration</li>
-			<li>La photographie</li>
-			<li>La peinture numérique</li>
-			<li>La direction artistique</li>
-			<li>La mise en page</li>
-			<li>Le design d'expérience</li>
-			<li>L'animation vectorielle</li>
-			<li>Le design web</li>
-			<li>Le montage vidéo</li>
-			<li>Les effets spéciaux</li>
-			<li>L'animation de personnages</li>
-			<li>La 3 dimension</li>
+		<h2>Formule "Première découverte"</h2>
+		<ul class="formule">
+			<menu-item 
+				v-for="item in discoveryList" 
+				:menu="item" 
+				:key="item.id"></order-item>			
+		</ul>
+		<h2>Formule "À la carte"</h2>
+		<ul class="formule">	
+			<menu-item 
+				v-for="item in alacarteList" 
+				:menu="item" 
+				:key="item.id"></order-item>
 		</ul>	
 	</article>
 	
 	<article id="order">
 		<h2>Votre commande</h2>
 		<ol>
-			<todo-item v-for="item in order" :todo="item" :key="item.id"></todo-item>
+			<order-item 
+				v-for="item in orderList" 
+				:order="item" 
+				:key="item.id"></order-item>
 		</ol>
 	</article>
+	
+	<script type="text/x-template" id="menu-template">
+		<li class="menu-item">
+			<a @click="showMenuItem">
+				<label>{{menu.label}}</label>
+				<span class="dotted-line"></span>
+				<span class="duration">{{menu.duration}}</span>
+			</a>
+		</li>
+	</script>
 	
 	<script src="assets/scripts/index.js"></script>
 </body>

@@ -1,0 +1,91 @@
+
+// a variable map in Sass
+$colors: (
+  primary_red: #de2845,
+  primary_black: #000000,
+  dark_grey: #111111,
+  light_grey: #999999,
+  light_brown: #E8EAED,
+);
+
+html, body {
+	margin: 0;
+	font-family: "coquette",sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+}
+h1 {
+	font-size: 2rem;
+	color: map-get($colors, primary_red);
+	text-align: center;
+}
+p, li {
+	font-weight: 300;
+}
+li {
+	list-style-type: none;
+}
+p {
+	font-size: 1rem;
+	color: map-get($colors, primary_black);
+}
+footer > p {
+	text-align: center;
+	font-size: 0.8rem;
+}
+
+#menu {
+	min-width: 320px;
+	max-width: 640px;
+	margin: 0 auto;
+	border: 1px solid map-get($colors, primary_red);
+	background-color: map-get($colors, light_brown);
+	border-radius: 20px;
+	text-align: center;
+	h2 {
+		color: map-get($colors, primary_red);
+	}
+	h3 {
+		color: map-get($colors, primary_red);
+	}
+	hr {
+		border: 0;
+		height: 50px;
+		background-image: url(/assets/img/french-curve-red.png);
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: 30%;
+	}
+}
+.formule {
+	padding: 0;
+	text-align: left;
+	.menu-item {
+		a {
+			padding: 0.5em 1em 0em 1em;
+			display: block;
+			height: 30px;
+			text-decoration: none;
+			color: map-get($colors, dark_grey);
+			display: flex;
+			flex-direction: row;
+			label {
+				margin-right: 1em;
+			}
+			.dotted-line {
+				flex: 1;
+				align-self: center;
+				border-bottom: 1px dotted map-get($colors, light_grey);
+				margin-top: 5px;
+			}
+			.duration {
+				margin-left: 1em;
+			}
+		}
+		a:hover {
+			color: white;
+			background-color: map-get($colors, primary_red);
+		}
+	}
+}
