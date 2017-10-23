@@ -13,7 +13,7 @@ footer > p { text-align: center; font-size: 0.8rem; }
 #menu { min-width: 320px; max-width: 640px; margin: 0 auto; border: 1px solid #de2845; background-color: #E8EAED; border-radius: 20px; text-align: center; }
 #menu h2 { color: #de2845; }
 #menu h3 { color: #de2845; }
-#menu hr { border: 0; height: 50px; background-image: url(/assets/img/french-curve-red.png); background-repeat: no-repeat; background-position: center center; background-size: 30%; }
+#menu hr { border: 0; height: 50px; background-image: url(../images/french-curve-red.png); background-repeat: no-repeat; background-position: center center; background-size: 30%; }
 
 .formule { padding: 0; text-align: left; }
 .formule .menu-item a { padding: 0.5em 1em 0em 1em; display: block; height: 30px; text-decoration: none; color: #111111; display: flex; flex-direction: row; }
