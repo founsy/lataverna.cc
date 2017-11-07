@@ -1,0 +1,109 @@
+{
+    "today": [
+      {
+          "id": "news",
+          "label": "Les nouveautés pêchées du matin",
+          "duration": 60
+      }
+    ],
+    "discovery": [
+        {
+            "id": "platform",
+            "label": "La plateforme Creative Cloud",
+            "desc": "Creative Cloud donne accès à l'ensemble des applications Adobe pour postes de travail et terminaux mobiles, qu'il s'agisse des incontournables tels que Photoshop CC ou d'outils de nouvelle génération comme Adobe XD CC. Bénéficiez également de modèles intégrés pour gagner du temps au début de vos projets, ainsi que de tutoriels détaillés pour affiner vos compétences et être rapidement opérationnel. Cette solution vous offre tout ce dont vous avez besoin pour créer, collaborer et trouver l'inspiration.",
+            "duration": 30,
+            "video": "assets/media/4bc64b06-1ff9-4814-96dc-3d49d3866857_20171019092126.854x480at800_vp8.webm",
+            "poster": "assets/media/4f3b4031_960x540.jpg",
+            "tracks_fr": "//video.tv.adobe.com/vc/af2eeff5-8018-4d9b-9485-6336764947eb/fre_fr.vtt"
+        },
+        {
+            "id": "mobile",
+            "label": "Les applications mobiles",
+            "desc": "Les idées géniales peuvent surgir n'importe où. Et grâce aux applications mobiles Adobe, les chefs d'œuvre aussi. Esquissez, dessinez, peignez, élaborez des mises en page, retouchez des photos et créez des vidéos avec les applications mobiles Adobe. Avec Adobe CreativeSync, toutes vos applications et ressources sont connectées sur votre poste de travail et vos appareils mobiles. Vous créez ainsi de remarquables projets, où que vous soyez.",
+            "duration": 20,
+            "poster": "assets/media/mobile-catalog-marquee.jpg"
+        },
+        {
+            "id": "desktop",
+            "label": "Les applications desktop",
+            "duration": 20
+        },
+        {
+            "id": "collaborative",
+            "label": "Les services collaboratifs",
+            "duration": 30
+        },
+        {
+            "id": "resources",
+            "label": "Les services de ressources",
+            "duration": 30
+        },
+        {
+            "id": "community",
+            "label": "Les services communautaires",
+            "duration": 10
+        }
+    ],
+    "alacarte": [
+        {
+            "id": "illustration",
+            "label": "L'illustration",
+            "duration": 30
+        },
+        {
+            "id": "photo",
+            "label": "La photographie",
+            "duration": 30
+        },
+        {
+            "id": "painting",
+            "label": "La peinture numérique",
+            "duration": 30
+        },
+        {
+            "id": "artdirection",
+            "label": "La direction artistique",
+            "duration": 30
+        },
+        {
+            "id": "layout",
+            "label": "La mise en page",
+            "duration": 30
+        },
+        {
+            "id": "ux",
+            "label": "Le design d'expérience",
+            "duration": 30
+        },
+        {
+            "id": "animation",
+            "label": "L'animation vectorielle",
+            "duration": 30
+        },
+        {
+            "id": "web",
+            "label": "Le design web",
+            "duration": 30
+        },
+        {
+            "id": "video",
+            "label": "Le montage vidéo",
+            "duration": 30
+        },
+        {
+            "id": "fx",
+            "label": "Les effets spéciaux",
+            "duration": 30
+        },
+        {
+            "id": "characters",
+            "label": "L'animation de personnages",
+            "duration": 30
+        },
+        {
+            "id": "3d",
+            "label": "La 3 dimentions",
+            "duration": 30
+        }
+    ]
+}

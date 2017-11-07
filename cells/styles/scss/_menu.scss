@@ -1,0 +1,58 @@
+#menu {
+	min-width: 320px;
+	max-width: 640px;
+	margin: 0 auto 30px auto;
+	border: 1px solid map-get($colors, primary_red);
+	background-color: map-get($colors, light_brown);
+	border-radius: 20px;
+	text-align: center;
+	h2 {
+		color: map-get($colors, primary_red);
+	}
+	h3 {
+		color: map-get($colors, primary_red);
+	}
+	hr {
+		border: 0;
+		height: 50px;
+		background-image: url(../images/french-curve-red.png);
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: 30%;
+	}
+	.formule {
+		padding: 0;
+		text-align: left;
+		.menu-item {
+			a {
+				padding: 0.5em 1em 0em 1em;
+				display: block;
+				height: 30px;
+				text-decoration: none;
+				color: map-get($colors, dark_grey);
+				display: flex;
+				flex-direction: row;
+				label {
+					margin-right: 1em;
+				}
+				.dotted-line {
+					flex: 1;
+					align-self: center;
+					border-bottom: 1px dotted map-get($colors, light_grey);
+					margin-top: 5px;
+				}
+				.duration {
+					margin-left: 1em;
+				}
+			}
+			a:hover {
+				color: white;
+				background-color: map-get($colors, primary_red);
+			}
+		}
+		a:hover {
+			color: white;
+			background-color: map-get($colors, primary_red);
+		}
+	}
+}

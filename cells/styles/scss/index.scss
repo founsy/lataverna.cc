@@ -1,0 +1,44 @@
+
+// Global Colors
+
+$colors: (
+  primary_red: #de2845,
+  primary_black: #000000,
+  dark_grey: #111111,
+  light_grey: #999999,
+  light_brown: #E8EAED,
+);
+
+// Global tags
+
+html, body {
+	margin: 0;
+	font-family: "coquette",sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+}
+h1 {
+	font-size: 2rem;
+	color: map-get($colors, primary_red);
+	text-align: center;
+}
+p, li {
+	font-weight: 300;
+}
+li {
+	list-style-type: none;
+}
+p {
+	font-size: 1rem;
+	color: map-get($colors, primary_black);
+}
+footer > p {
+	text-align: center;
+	font-size: 0.8rem;
+}
+
+
+@import 'menu';
+
+@import 'order';
