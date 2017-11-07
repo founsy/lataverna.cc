@@ -28,9 +28,8 @@ var orderVue = new Vue({
         animDuration: 0,
         items: [],
         email: "",
-        emailPattern: "/\@(?!(me|mac|icloud|gmail|googlemail|hotmail|live|msn|outlook|yahoo|ymail|aol)\.)/",
-        emailOk: false,
-        submitting: false
+        emailPattern: /\@(?!(me|mac|icloud|gmail|googlemail|hotmail|live|msn|outlook|yahoo|ymail|aol)\.)/,
+        emailOk: false
     },
     methods: {
         // Add an item in the order
@@ -49,40 +48,18 @@ var orderVue = new Vue({
             if(removed.length > 0)
                 this.duration -= data.duration;
         },
-        // Validate form
-        validateEmail: function(event) {
-            var form = this.$el.querySelector('#email-form');
-            console.debug('Form: ', form);
-            var input = this.$el.querySelector('#email-input');;
-            console.debug('Input: ', input.validity);
-            var isValid = input.checkValidity();
+        // Verify email
+        emailVerify: function(event) {
+            console.debug('Email value: ', this.email);
+            console.debug('Email validity: ', event.target.validity);
+            var isValid = event.target.validity.valid;
             if(!isValid) {
                 this.emailOk = false;
-                if(input.validity.typeMismatch) {
-                    input.setCustomValidity("Mais... ça ne ressemble pas à un email ça ?");
-                    form.reportValidity();
-                }
-                else if(input.validity.patternMismatch) {
-                    input.setCustomValidity("Mais... celà n'a pas l'air d'un email pro ceci ?");
-                    form.reportValidity();
-                }
-                else {
-                    form.reportValidity();
-                }
-            }
-            else {
-                this.emailOk = true;
             }
             // compare with the list of excluded email.
             // if exclusion:
             // if included:
-            return false;
-        },
-        ordering: function(event) {
-            console.debug('Ordering: ', event.target);
-            event.target.checkValidity();
-            event.preventDefault();
-            event.stopPropagation();
+
         },
         // Open or close the Order panel
         show: function(section) {

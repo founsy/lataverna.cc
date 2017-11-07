@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!-- saved from url=(0031)http://localhost/lataverna.cc/? -->
+<html lang="fr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Taverna Creativa</title>
+<script src="./Taverna Creativa_files/vue.js"></script><!-- <script src="https://unpkg.com/vue"></script> -->
+<script src="./Taverna Creativa_files/tween.js"></script>
+<link rel="stylesheet" href="./Taverna Creativa_files/layout.css">
+</head>
+<body cz-shortcut-listen="true">
+
+    <header><h1>La Taverne</h1></header>
+
+    <!-- Le Menu de la Taverna Creativa -->
+	<article id="menu" class="menu-deco"><section><h2>Formule "du jour"</h2> <ul class="formule today"><li class="menu-item"><a class="timed-item"><label>Les nouveautés pêchées du matin</label> <span class="separator dotted"></span> <span class="duration">60'</span></a></li></ul> <hr class="french-curve"></section> <section><h2>Formule "Première découverte"</h2> <ul class="formule"><li class="menu-item"><a class="timed-item"><label>La plateforme Creative Cloud</label> <span class="separator dotted"></span> <span class="duration">30'</span></a></li><li class="menu-item"><a class="timed-item"><label>Les applications mobiles</label> <span class="separator dotted"></span> <span class="duration">20'</span></a></li><li class="menu-item"><a class="timed-item"><label>Les applications desktop</label> <span class="separator dotted"></span> <span class="duration">20'</span></a></li><li class="menu-item"><a class="timed-item"><label>Les services collaboratifs</label> <span class="separator dotted"></span> <span class="duration">30'</span></a></li><li class="menu-item"><a class="timed-item"><label>Les services de ressources</label> <span class="separator dotted"></span> <span class="duration">30'</span></a></li><li class="menu-item"><a class="timed-item"><label>Les services communautaires</label> <span class="separator dotted"></span> <span class="duration">10'</span></a></li></ul> <hr class="french-curve"></section> <section><h2>Formule "À la carte"</h2> <ul class="formule"><li class="menu-item"><a class="timed-item"><label>L'illustration</label> <span class="separator dotted"></span> <span class="duration">30'</span></a></li><li class="menu-item"><a class="timed-item"><label>La photographie</label> <span class="separator dotted"></span> <span class="duration">30'</span></a></li><li class="menu-item"><a class="timed-item"><label>La peinture numérique</label> <span class="separator dotted"></span> <span class="duration">30'</span></a></li><li class="menu-item"><a class="timed-item"><label>La direction artistique</label> <span class="separator dotted"></span> <span class="duration">30'</span></a></li><li class="menu-item"><a class="timed-item"><label>La mise en page</label> <span class="separator dotted"></span> <span class="duration">30'</span></a></li><li class="menu-item"><a class="timed-item"><label>Le design d'expérience</label> <span class="separator dotted"></span> <span class="duration">30'</span></a></li><li class="menu-item"><a class="timed-item"><label>L'animation vectorielle</label> <span class="separator dotted"></span> <span class="duration">30'</span></a></li><li class="menu-item"><a class="timed-item"><label>Le design web</label> <span class="separator dotted"></span> <span class="duration">30'</span></a></li><li class="menu-item"><a class="timed-item"><label>Le montage vidéo</label> <span class="separator dotted"></span> <span class="duration">30'</span></a></li><li class="menu-item"><a class="timed-item"><label>Les effets spéciaux</label> <span class="separator dotted"></span> <span class="duration">30'</span></a></li><li class="menu-item"><a class="timed-item"><label>L'animation de personnages</label> <span class="separator dotted"></span> <span class="duration">30'</span></a></li><li class="menu-item"><a class="timed-item"><label>La 3 dimentions</label> <span class="separator dotted"></span> <span class="duration">30'</span></a></li></ul> <hr class="french-curve"></section></article>
+    <script type="text/x-template" id="menu-template">
+        <li class="menu-item" :class="{ disabled: item.disabled }">
+            <a @click="itemselect" class="timed-item">
+                <label>{{item.label}}</label>
+                <span class="separator dotted"></span>
+                <span class="duration">{{item.duration}}'</span>
+            </a>
+        </li>
+    </script>
+
+    <!-- Explications du serveur sur le plat -->
+    <article id="preview" class="overlay-deco"><header><a class="navbar"><svg class="left icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/images/icons.svg#delete" class="dark"></use></svg> <h2 class="center">Séléction</h2> <label class="right duration"> min</label></a></header> <section><img> <h3></h3> <p class="desc"></p></section> <footer class="actionbar"><button class="plain red">Oui, il faut ça !</button> <br><br> <button>Non, merci.</button></footer></article>
+
+    <!-- La commande du serveur -->
+	<article id="order" class="overlay-deco"><header><a class="navbar"><!----> <h2 class="center">Votre commande</h2> <label class="right duration">0'</label></a></header> <hr class="french-curve"> <section class="order-list"><ol></ol> <p>Il n'y a rien dans la commande.</p></section> <footer class="actionbar"><form onsubmit="retrun false;"><input id="email-input" type="email" required="required" placeholder="prénom@entreprise.com"> <br> <label for="email-input">Uniquement un email professionel s'il vous plaît.</label> <br> <input type="submit" id="button-ok" class="plain red">Allez, c'est parti...
+            </form></footer></article>
+
+<script src="./Taverna Creativa_files/index.js"></script><script src="./Taverna Creativa_files/menu.js"></script><script src="./Taverna Creativa_files/preview.js"></script><script src="./Taverna Creativa_files/order.js"></script>
+
+
+</body></html>

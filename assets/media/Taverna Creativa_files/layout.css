@@ -1,0 +1,77 @@
+
+@import url("design.css");
+
+html, body { margin: 0; padding: 0; font-family: sans-serif; font-size: 14px; }
+body.preview-mode, body.order-mode { overflow-y: hidden; height:100%; }
+header, footer, section { margin: 0; padding: 0; }
+h1, h2, h3, h4, h5, h6 { margin: 0; padding: 0; }
+h1 { font-size: 2rem; margin: 0.5em 0; text-align: center; }
+p { font-size: 1rem; font-weight: 300; }
+ul, ol { padding: 0; }
+li { list-style-type: none; font-weight: 300; }
+hr { max-width: 90%; }
+
+/* SVG icon with symbol  */
+svg.icon { width: 16px; height: 16px; }
+svg.icon > use { width: 16px; height: 16px; }
+
+/* Generic input & buttons elements */
+input { width: 80%; height: 30px; font-size: 1.4rem; text-align: center; }
+button { font-size: 1.5rem; cursor: pointer; }
+button.plain { width: 80%; height: 40px; }
+
+/* Navbar */
+.navbar { display: flex; flex-direction: row; padding: 0.5em 1em 0.5em 1em; }
+.navbar .left { align-self: center; text-align: left; }
+.navbar .center { flex: 1; align-self: center; text-align: center; }
+.navbar .right { align-self: center; text-align: right; }
+.navbar a { cursor: pointer; text-decoration: none; }
+
+/* Actionbar */
+.actionbar { }
+#email-input, #button-ok { margin: 1em; }
+
+/* Timed item (is used to display element of list with time for each item)  */
+.timed-item { display: flex; flex-direction: row; padding: 0.5em 1em 0.5em 1em; text-decoration: none; }
+.timed-item > label { margin-right: 10px; text-align: left; }
+.timed-item .separator { flex: 1; align-self: center; margin-top: 5px; }
+.timed-item > .duration { margin-left: 1em; text-align: right; }
+.timed-item > .icon { margin-left: 10px; align-self: center; }
+
+/* Menu */
+#menu { margin: 0 auto; text-align: center; }
+#menu h2 { margin: 0.5em 0; }
+#menu .formule { text-align: left; }
+#menu .menu-item a { cursor: pointer; font-size: 1.4rem; }
+
+/* Preview */
+#preview {
+    display: block; position: fixed; z-index: 50; overflow-y: hidden;
+    height: 0px; bottom: 0; left: 0; right: 0;
+    background-color: white; text-align: center;
+    transition: height .3s ease-out;
+}
+#preview.opened { height: 100%; overflow-y: auto; transition: height .3s ease-in; }
+#preview header { text-align: center; margin: 0; padding: 0; }
+#preview header a { cursor: pointer; }
+#preview header .duration { font-size: 1.6rem; }
+#preview section { text-align: center; }
+#preview section h3 { font-size: 1.4rem; margin-top: 1em; }
+#preview section img { width: 100%; height: auto; }
+#preview section p.desc { margin: 1em 2em; text-align: justify; font-size: 1.2rem; }
+#preview footer { margin-top: 1em; margin-bottom: 80px; }
+
+/* Order */
+#order {
+    display: block; position: fixed; z-index: 100; overflow-y: hidden;
+    height: 50px; bottom: 0; left: 0; right: 0;
+    background-color: white; text-align: center;
+    transition: height .3s ease-out;
+}
+#order.opened { height: 93%; overflow-y: auto; transition: height .3s ease-in; }
+#order header { text-align: center; margin: 0; padding: 0; }
+#order header a { cursor: pointer; }
+#order header .duration { font-size: 1.8rem; }
+#order ol { margin: 0; padding: 0; }
+#order .order-item { font-size: 1.4rem; }
+#order footer { margin-top: 1em; margin-bottom: 80px; }

@@ -1,8 +1,8 @@
 {
  "babelMapsPath": "",
  "babelMapsAddUrl": false,
- "babelSourcePath": "",
- "babelTranspilePath": "",
+ "babelSourcePath": "src",
+ "babelTranspilePath": "build",
  "createMap": false,
  "createTargetDirectories": false,
  "createTranspiledCode": true,

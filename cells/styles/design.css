@@ -1,0 +1,61 @@
+/* ========================
+ * Visual Design
+========================= */
+@import url("https://use.typekit.net/uch8xsn.css");
+
+html, body {
+    font-family: "coquette",sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+}
+h1, h2, h3 { color: #de2845; }
+li { list-style-type: none; }
+p { color: #000000; }
+label { font-family: "coquette",sans-serif; font-weight: 300;}
+
+hr.french-curve {
+    border: 0; height: 50px;
+    background-image: url(french-curve-red.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 150px;
+}
+
+/* SVG icon with symbol  */
+use.dark { fill: #000000; }
+use.red { fill: #FF0000; }
+svg path { fill: inherit; }
+
+/* Timed item is used to display element of list with time for each item  */
+
+.timed-item .separator.dotted { border-bottom: 1px dotted #999999; }
+
+/* Generic input & buttons elements */
+
+input:required { border: 1px solid #111111; font-family: "coquette",sans-serif; font-weight: 300; }
+input:required:invalid, input:focus:invalid { border: 3px solid red; }
+input:required:valid { border: 2px solid green; }
+
+button, input[type='submit'] { border: none; background: none; font-family: "coquette",sans-serif; font-weight: 400; }
+button.plain, input[type='submit'] { border-radius: 5px; font-weight: 700; }
+button.plain.red, input[type='submit'].red { border: 2px solid #D9233D; background-color: rgba(212, 31, 54, 1);  color: white; }
+button.plain.red:active, input[type='submit']:active { border: 1px solid #D9233D; }
+button.plain.red[disabled], input[type='submit']:disabled { background-color: rgba(212, 31, 54, 0.5); }
+
+header h2 { color: #111111; }
+header a { color: #111111; }
+header .duration { color: #D9233D; font-family: "coquette",sans-serif; font-weight: 500; }
+
+/* Menu */
+.menu-deco { border: 1px solid #de2845; border-radius: 20px; background-color: #E8EAED; }
+.menu-deco .menu-item a { color: #111111; }
+.menu-deco .menu-item a:hover { color: white; background-color: #de2845; }
+
+/* Preview & Order panel */
+.overlay-deco { background-color: rgba(255, 255, 255, 0.95); box-shadow: 0px -1px 10px 0px rgba(0, 0, 0, 0.4); }
+
+/* Animations */
+.order-item { transition: : all 1s; }
+.orderlist-enter-active, .orderlist-leave-active { opacity: 1; }
+.orderlist-enter, .orderlist-leave-to { opacity: 0; transform: translateX(40px); transition: all 1s; }
