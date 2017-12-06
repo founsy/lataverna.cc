@@ -5,9 +5,9 @@ function importScript(url, loadFunction) {
     script.onload = loadFunction;
     document.body.appendChild(script);
 }
-importScript('cells/scripts/menu.js');
-importScript('cells/scripts/preview.js');
-importScript('cells/scripts/order.js');
+importScript('scripts/menu.js');
+importScript('scripts/preview.js');
+importScript('scripts/order.js');
 
 // ------------------------
 // Events
@@ -35,17 +35,27 @@ var EventBus = new Vue({
     }
 });
 
+// When data are loaded
+EventBus.$on('menu:dataloaded', function(msg) {
+    console.info('data loaded:', msg);
+    // if(data.alacarte) {
+    //     orderVue.addItem(data.discovery[0]);
+    //     orderVue.addItem(data.discovery[1]);
+    //     orderVue.isOpen = true;
+    // }
+});
+
 // When PreVue is show (or hide)
-EventBus.$on('preview:show', function(data) {
-    if(data)
+EventBus.$on('preview:show', function(msg) {
+    if(msg)
         document.body.classList.add('preview-mode');
     else
         document.body.classList.remove('preview-mode');
 });
 
 // When OrderVue is show (or hide)
-EventBus.$on('order:show', function(data) {
-    if(data)
+EventBus.$on('order:show', function(msg) {
+    if(msg)
         document.body.classList.add('order-mode');
     else
         document.body.classList.remove('order-mode');
@@ -59,6 +69,6 @@ EventBus.$on('order:show', function(data) {
 var headerVue = new Vue({
   el: 'header',
   data: {
-    site_title: 'La Taverne'
+    site_title: 'La Taverna CC'
   }
 });

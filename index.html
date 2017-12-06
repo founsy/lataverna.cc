@@ -4,39 +4,50 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Taverna Creativa</title>
-<script src="cells/scripts/libs/vue.js"></script><!-- <script src="https://unpkg.com/vue"></script> -->
-<script src="cells/scripts/libs/tween.js"></script>
-<link rel="stylesheet" href="cells/styles/layout.css">
+<script src="scripts/libs/vue.js"></script><!-- <script src="https://unpkg.com/vue"></script> -->
+<script src="scripts/libs/tween.js"></script>
+<script src="scripts/libs/Sortable.js"></script>
+<script src="scripts/libs/vuedraggable.js"></script>
+<link rel="stylesheet" href="styles/layout.css">
 </head>
 <body>
+    <div class="background"></div>
 
     <header>
-        <h1>{{site_title}}</h1>
-	</header>
+        <nav id="mainnav" class="main-navbar">
+            <ul>
+                <li class="nav-item"><a href="#share">Partager ⎋</a></li>
+                <li class="nav-item"><a href="#about">À propos ⓘ</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <!-- Le Menu de la Taverna Creativa -->
-	<article id="menu" class="menu-deco">
-        <section>
-            <h2>Formule "du jour"</h2>
-    		<ul class="formule today">
-    			<menu-item v-for="item in today" :item="item" :key="item.id" list="today"></order-item>
-    		</ul>
-    		<hr class="french-curve">
-        </section>
-        <section>
-    		<h2>Formule "Première découverte"</h2>
-    		<ul class="formule">
-    			<menu-item v-for="item in discovery" :item="item" :key="item.id" list="discovery"></order-item>
-    		</ul>
-    		<hr class="french-curve">
-        </section>
-        <section>
-            <h2>Formule "À la carte"</h2>
-    		<ul class="formule">
-    			<menu-item v-for="item in alacarte" :item="item" :key="item.id" list="alacarte"></order-item>
-    		</ul>
-    		<hr class="french-curve">
-        </section>
+	<article id="menu" class="overlay-deco menu-deco">
+        <h1>La Tarvena CC</h1>
+        <div class="menu-border">
+            <section>
+                <h2>Formule "du jour"</h2>
+        		<ul class="formule today">
+        			<menu-item v-for="item in today" :item="item" :key="item.id" list="today"></order-item>
+        		</ul>
+        		<hr class="french-curve">
+            </section>
+            <section>
+        		<h2>Formule "Première découverte"</h2>
+        		<ul class="formule">
+        			<menu-item v-for="item in discovery" :item="item" :key="item.id" list="discovery"></order-item>
+        		</ul>
+        		<hr class="french-curve">
+            </section>
+            <section>
+                <h2>Formule "À la carte"</h2>
+        		<ul class="formule">
+        			<menu-item v-for="item in alacarte" :item="item" :key="item.id" list="alacarte"></order-item>
+        		</ul>
+        		<hr class="french-curve">
+            </section>
+        </div>
 	</article>
     <script type="text/x-template" id="menu-template">
         <li class="menu-item" :class="{ disabled: item.disabled }">
@@ -49,64 +60,67 @@
     </script>
 
     <!-- Explications du serveur sur le plat -->
-    <article id="preview" :class="{opened: isOpen}" class="overlay-deco">
+    <article id="preview" :class="{opened: isOpen}" class="overlay-deco preview-deco">
         <header>
             <a @click="toggle" class="navbar">
-                <svg class="left icon"><use class="dark" xlink:href="assets/images/icons.svg#delete"/></svg>
-                <h2 class="center">Séléction</h2>
-                <label class="right duration">{{item.duration}} min</label>
+                <svg class="left icon" v-if="isOpen"><use class="dark" xlink:href="assets/images/icons.svg#delete"/></svg>
+                <h2 class="center">Votre séléction</h2>
+                <label v-if="item" class="right duration">{{item.duration}} min</label>
             </a>
         </header>
-        <section>
+        <section v-if="!item">
+            <p>Il n'y a rien à voir ici.</p>
+        </section>
+        <section v-if="item">
             <video v-if="item.video" id="video-player" :src="item.video" :poster="item.poster" controls="controls" preload="none" width="100%" height="100%" style="background-color: transparent;"></video>
             <img v-else="item.poster" :src="item.poster" :alt="item.label" />
             <h3>{{item.label}}</h3>
             <p class="desc">{{item.desc}}</p>
         </section>
         <footer class="actionbar">
-            <button class="plain red" @click="orderItem">Oui, il faut ça !</button>
+            <button :disabled="!item" class="plain red" @click="orderItem">Oui, parlons de celà.</button>
             <br><br>
             <button @click="hide">Non, merci.</button>
         </footer>
     </article>
 
     <!-- La commande du serveur -->
-	<article id="order" :class="{opened: isOpen}" class="overlay-deco">
+	<article id="order" :class="{opened: isOpen}" class="overlay-deco order-deco">
 		<header>
             <a @click="toggle" class="navbar">
                 <svg class="left icon" v-if="isOpen"><use class="dark" xlink:href="assets/images/icons.svg#delete"/></svg>
                 <h2 class="center">Votre commande</h2>
-                <label class="right duration">{{animDuration}}'</label>
+                <label class="right duration">{{animDuration}} min</label>
             </a>
         </header>
         <hr class="french-curve">
         <section class="order-list">
-            <transition-group name="orderlist" tag="ol">
-                <li v-for="item in items" :key="item.id" class="order-item timed-item">
-    				<label>{{item.label}}</label>
-    				<span class="separator dotted"></span>
-    				<span class="duration">{{item.duration}}'</span>
-                    <button @click="removeItem(item)">
-                        <svg class="icon"><use class="dark" xlink:href="assets/images/icons.svg#delete"/></svg>
-                    </button>
-        		</li>
-            </transition-group>
+            <draggable v-model="items" @start="drag=true" @end="drag=false" :class="{dragging: drag}">
+                <transition-group name="orderlist" tag="ol">
+                    <li v-for="item in items" :key="item.id" class="order-item timed-item">
+                        <label>{{item.label}}</label>
+        				<span class="separator dotted"></span>
+        				<span class="duration">{{item.duration}}'</span>
+                        <button @click="removeItem(item)" title="Retirer de la commande">
+                            <svg class="icon"><use class="dark" xlink:href="assets/images/icons.svg#delete"/></svg>
+                        </button>
+            		</li>
+                </transition-group>
+            </draggable>
             <p v-if="items.length <= 0">Il n'y a rien dans la commande.</p>
         </section>
+        <hr class="french-curve">
         <footer class="actionbar">
-            <form id="email-form">
-                <label for="email-input">Uniquement un email professionel s'il vous plaît.</label>
-                <br>
-                <input id="email-input" type="email"
-                        v-model="email" :pattern="emailPattern"
-                        required placeholder="prénom@entreprise.com" />
-                <br>
-                <!-- :disabled="!emailOk"  -->
-                <button id="button-ok" @click="validateEmail" class="plain red">Allez, c'est parti...</button>
-            </form>
+            <label for="email-input">Votre email professionel :</label>
+            <br>
+            <input id="email-input" type="email" required v-model="email" placeholder="prénom@entreprise.com" />
+            <br>
+            <p id="email-message"></p>
+            <br>
+            <button id="button-ok" class="plain red" @click="ordering">Allez, je commande...</button>
         </footer>
 	</article>
 
-<script src="cells/scripts/index.js"></script>
+<script src="scripts/index.js"></script>
 </body>
 </html>

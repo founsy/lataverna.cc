@@ -3,8 +3,8 @@
 ========================= */
 @import url("https://use.typekit.net/uch8xsn.css");
 
-html, body {
-    font-family: "coquette",sans-serif;
+body {
+    font-family: "coquette", Georgia, serif;
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
@@ -13,6 +13,18 @@ h1, h2, h3 { color: #de2845; }
 li { list-style-type: none; }
 p { color: #000000; }
 label { font-family: "coquette",sans-serif; font-weight: 300;}
+
+.background {
+    background-image: url('../assets/images/background-rue.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+.main-navbar { text-align: right; }
+.main-navbar ul li > a { color: #ffffff; font-size: 1.2em; font-style: 700; text-decoration: none; }
+.main-navbar ul li > a:active { text-decoration: underline; }
 
 hr.french-curve {
     border: 0; height: 50px;
@@ -33,9 +45,10 @@ svg path { fill: inherit; }
 
 /* Generic input & buttons elements */
 
-input:required { border: 1px solid #111111; font-family: "coquette",sans-serif; font-weight: 300; }
-input:required:invalid, input:focus:invalid { border: 3px solid red; }
-input:required:valid { border: 2px solid green; }
+input[type='email']:required { border: 2px solid #111111; font-family: "coquette",sans-serif; font-weight: 300; }
+input[type='email']:focus { border: 2px solid #111111; }
+input[type='email']:invalid { border: 2px solid red; }
+input[type='email']:valid { border: 2px solid green; }
 
 button, input[type='submit'] { border: none; background: none; font-family: "coquette",sans-serif; font-weight: 400; }
 button.plain, input[type='submit'] { border-radius: 5px; font-weight: 700; }
@@ -47,15 +60,29 @@ header h2 { color: #111111; }
 header a { color: #111111; }
 header .duration { color: #D9233D; font-family: "coquette",sans-serif; font-weight: 500; }
 
+.overlay-deco { box-shadow: 0px -1px 10px 0px rgba(0, 0, 0, 0.4); }
+
 /* Menu */
-.menu-deco { border: 1px solid #de2845; border-radius: 20px; background-color: #E8EAED; }
+.menu-deco { border-radius: 10px; background-color: rgba(229, 231, 234, 0.95); }
 .menu-deco .menu-item a { color: #111111; }
 .menu-deco .menu-item a:hover { color: white; background-color: #de2845; }
+.menu-border { border: 1px solid #de2845; border-radius: 10px; }
 
 /* Preview & Order panel */
-.overlay-deco { background-color: rgba(255, 255, 255, 0.95); box-shadow: 0px -1px 10px 0px rgba(0, 0, 0, 0.4); }
+.preview-deco, .order-deco { background-color: rgba(255, 255, 255, 0.95); }
+
+/* Drag & Drop */
+.dragging { opacity: 0.4; cursor: move; }
+.dragover { border: 2px dashed #de2845; }
 
 /* Animations */
 .order-item { transition: : all 1s; }
 .orderlist-enter-active, .orderlist-leave-active { opacity: 1; }
 .orderlist-enter, .orderlist-leave-to { opacity: 0; transform: translateX(40px); transition: all 1s; }
+
+@media (min-width: 768px) {
+}
+
+/*[draggable] { -moz-user-select: none; -khtml-user-select: none; -webkit-user-select: none; user-select: none;
+  -khtml-user-drag: element; -webkit-user-drag: element;
+}*/

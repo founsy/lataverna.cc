@@ -1,0 +1,81 @@
+{
+    "@context" : "http://schema.org",
+    "@type" : "Event",
+    "name" : "Adobe Creative Dèj 2017, chez Publicis",
+    "startDate" : "2017-11-30T10:00+01:00",
+    "duration" : "2H",
+    "url" : "http://www.lataverna.cc/events/2017-11-30-10",
+    "isAccessibleForFree": true,
+    "maximumAttendeeCapacity": 100,
+    "eventStatus": "scheduled",
+    "inLanguage": "fr",
+    "availableLanguage": {
+        "@type": "Language",
+        "name": ["Français","English"]
+    }
+    "performer": [
+        {
+            "@type" : "Person",
+            "name": "Yohan Founs",
+            "email": "founs@adobe.com",
+            "workFor": "Adobe",
+            "jobTitle": "Creative Technologist"
+        },
+        {
+            "@type" : "Person",
+            "name": "Stéphane Baril",
+            "email": "sbaril@adobe.com",
+            "workFor": "Adobe",
+            "jobTitle": "Senior Solution Consultant"
+        }
+    ],
+    "contributor": [
+        {
+            "@type" : "Person",
+            "name": "Christine Chagneau-Pancrazi",
+            "email": "cchagnea@adobe.com",
+            "workFor": "Adobe",
+            "jobTitle": "Marketing Manager, Digital Media"
+        },
+        {
+            "@type" : "Person",
+            "name": "Fred Roland",
+            "email": "roland@adobe.com",
+            "workFor": "Adobe",
+            "jobTitle": "Strategic Relations, Digital Media"
+        },
+    ],
+    "organizer": {
+        "@type" : "Organization",
+        "name": "Adobe"
+    },
+    "audience": {
+        "@type" : "Audience",
+        "name": "Les Créatifs et les Designers de l'entreprise"
+        "audienceType": "creatives, designers",
+    },
+    "attendee" : [
+        { "@type": "Person", "name": "", "email": "", "workFor": "Renault", "jobTitle": ""  },
+        { "@type": "Person", "name": "", "email": "", "workFor": "Renault", "jobTitle": ""  },
+        { "@type": "Person", "name": "", "email": "", "workFor": "Renault", "jobTitle": ""  }
+    ],
+    "location" : {
+        "@type" : "Place",
+        "sameAs" : "http://www.reanult.com/digital",
+        "name" : "Chez Renault Digital à Boulogne",
+        "address" : {
+            "@type" : "PostalAddress",
+            "streetAddress" : "exemple de rue 1",
+            "addressLocality" : "Boulogne",
+            "postalCode" : "92000",
+            "addressCountry" : "France"
+        }
+    },
+    "offers" : {
+        "@type": "AggregateOffer",
+         "url" : "http://www.lataverna.cc",
+        "lowPrice" : "0",
+        "offerCount" : "1839"
+    },
+    "aggregateRating": {}
+}

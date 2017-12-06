@@ -19,7 +19,7 @@ var preVue = new Vue({
         isOpen: false,
         duration: 0,
         animDuration: 0,
-        item: {},
+        item: null,
     },
     methods: {
         // Preview an item before push in order
@@ -29,18 +29,19 @@ var preVue = new Vue({
         },
         // Add the preview item into the order
         orderItem: function() {
-            EventBus.$emit('order:add', this.item);
+            if(this.item.id) {
+                EventBus.$emit('order:add', this.item);
+            }
             this.hide();
         },
         // Open the Vue
         show: function() {
             this.isOpen = true;
-            // say it to the System
             EventBus.$emit('preview:show', this.isOpen);
         },
         // Close the Vue
         hide: function() {
-            this.item = {};
+            //this.item = null;
             this.$el.scrollTop = 0; // hack: scroll to top to reset the order.
             this.isOpen = false;
             // say it to the System

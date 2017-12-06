@@ -1,0 +1,26 @@
+{
+    "@context" : "http://schema.org",
+    "@type": "Website",
+    "identifier": "lataverna",
+    "description": "La Taverna Creativa",
+    "image": "http://lataverna.cc/preview.png",
+    "url": "http://www.lataverna.cc",
+    "dateCreated": "2017-11-16T09:12:50+10:00",
+    "dateModified": "2017-11-16T09:12:50+10:00",
+    "datePublished": "2018-01-01",
+    "hasPart":
+    {
+        "@type": "Menu",
+        "hasMenuSection": [
+            {
+                "@type": "MenuSection",
+                "hasMenuItem": [
+                    {
+                        "@type": "MenuItem",
+                        "name": ""
+                    }
+                ]
+            }
+        ]
+    }
+}

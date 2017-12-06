@@ -1,9 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" style="display:none;">
-
-    <symbol id="delete" viewBox="2116 3450 15.556 15.556">
-        <title>Icon delete</title>
-        <desc>Icon delete</desc>
-        <path id="line" d="M7.778,9.192,1.414,15.557,0,14.142,6.364,7.778,0,1.414,1.414,0,7.778,6.364,14.142,0l1.415,1.414L9.192,7.778l6.364,6.364-1.415,1.415Z" transform="translate(2116 3450)"/>
-    </symbol>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 595.3 841.9" style="enable-background:new 0 0 595.3 841.9;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#000000;stroke-width:70;stroke-miterlimit:10;}
+</style>
+<symbol  id="delete" viewBox="-297.7 -297.7 595.3 595.3">
+	<path id="line_1_" d="M0,54.1l-243.5,243.6l-54.1-54.1L-54.1,0l-243.5-243.5l54.1-54.1L0-54.1l243.5-243.5l54.1,54.1L54.1,0
+		l243.5,243.5l-54.1,54.1L0,54.1z"/>
+</symbol>
+<symbol id="drag" viewBox="-297.6 -280.6 595.3 561.3">
+	<line fill="none" stroke=":#000000" stroke-width="70" x1="-297.6" y1="245.6" x2="297.6" y2="245.6"/>
+	<line fill="none" stroke=":#000000" stroke-width="70" x1="-297.6" y1="-245.6" x2="297.6" y2="-245.6"/>
+</symbol>
 
 </svg>
