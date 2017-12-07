@@ -1,0 +1,10 @@
+{
+    "@context": {
+        "@vocab": "http://lataverna.cc",
+        "language": "fr"
+    },
+    "@type": "Translation",
+    "hasConcept": {
+        
+    }
+}

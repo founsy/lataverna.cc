@@ -1,10 +1,9 @@
 // ------------------------
 // Events
 // ------------------------
-
 // When Menu item is selected...
 EventBus.$on('menu:select', function(data) {
-    console.debug('(Preview) selected item: '+ data.id);
+    console.debug('(Preview) selected item: '+ data.identifier);
     preVue.preview(data);
 });
 
@@ -16,12 +15,22 @@ var preVue = new Vue({
     el: '#preview',
     prefix: 'preview:',
     data: {
+        name: "",
+        label: {},
         isOpen: false,
         duration: 0,
         animDuration: 0,
         item: null,
     },
+    created: function() {
+        EventBus.localize().then(this.dataCallback.bind(this));
+    },
     methods: {
+        dataCallback: function(data) {
+            console.debug('Preview - data loaded: ', data);
+            if(data.mainContentOfPage)
+                preVue.digest(data.mainContentOfPage.offer);
+        },
         // Preview an item before push in order
         preview: function(data) {
             this.item = data;
@@ -29,7 +38,7 @@ var preVue = new Vue({
         },
         // Add the preview item into the order
         orderItem: function() {
-            if(this.item.id) {
+            if(this.item.identifier) {
                 EventBus.$emit('order:add', this.item);
             }
             this.hide();
@@ -53,6 +62,11 @@ var preVue = new Vue({
                 this.hide();
             else
                 this.show();
+        },
+        digest: function(data) {
+            console.debug('Preview - digest data: ', data);
+            this.name = data.name;
+            this.label = data.label;
         }
     }
 });

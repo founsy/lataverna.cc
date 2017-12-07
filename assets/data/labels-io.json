@@ -1,0 +1,22 @@
+{
+    "@context": {
+        "@vocab": "http://lataverna.cc",
+        "language": "fr"
+    },
+    "@type": "Translation",
+    "translation": {
+        "your-selection": "Votre séléction",
+        "nothing-here": "Il n'y a rien à voir ici.",
+        "yes-lets-talk": "Oui, parlons de celà.",
+        "no-thanks": "Non, merci.",
+        "your-order": "Votre commande",
+        "min": "min",
+        "remove-from-command": "Retirer de la commande",
+        "nothing-in-order": "Il n'y a rien dans la commande.",
+        "your-pro-email": "Votre email professionel :",
+        "email-placeholder": "prénom@entreprise.com",
+        "error-notemail": "Mais... celà ne ressemble pas à un email ça ?",
+        "error-notproemail": "Mais... celà n'a pas l'air d'un email pro ceci ?",
+        "go-order": "Allez, je commande..."
+    }
+}

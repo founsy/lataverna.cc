@@ -1,13 +1,11 @@
 // ------------------------
 // Events
 // ------------------------
-
 // Add item to order
 EventBus.$on('order:add', function(data) {
     console.debug('(Order) item to add: '+ data);
     orderVue.addItem(data);
 });
-
 // Remove item from order
 EventBus.$on('order:remove', function(data) {
     console.debug('(Order) item to delete: '+ data);
@@ -23,21 +21,28 @@ var orderVue = new Vue({
     el: '#order',
     prefix: 'order:',
     data: {
+        name: "",
+        label: {},
         isOpen: false,
         duration: 0,
         animDuration: 0,
         items: [],
         email: "",
+        isNotEmail: false,
+        isNotProEmail: false,
         emailValidity: null,
         submitReady: false,
         submitting: false,
         drag: false
-        // emailPattern: "/\@(?!(me|mac|icloud|gmail|googlemail|hotmail|live|msn|outlook|yahoo|ymail|aol)\.)/",
-        // dragSource: null
+    },
+    created: function() {
+        EventBus.localize().then(this.dataCallback.bind(this));
     },
     methods: {
-        created: function() {
-            //this.emailPattern = this.buildEmailPattern();
+        dataCallback: function(data) {
+            console.debug('Order - data loaded: ', data);
+            if(data.mainContentOfPage)
+                orderVue.digest(data.mainContentOfPage.order);
         },
         // Add an item in the order
         addItem: function(data) {
@@ -68,39 +73,29 @@ var orderVue = new Vue({
         ordering: function(event) {
             console.debug('Ordering...');
             var emailIn = this.$el.querySelector('#email-input');
-            this.validInput(emailIn);
+            emailIn.checkValidity();
             console.debug('Email validity: ', emailIn.validity);
-            if(emailIn.validity.valid) {
+            if(!emailIn.validity.valid) {
+                this.isNotEmail = true;
+            }
+            else {
+                this.isNotEmail = false;
                 var allowed = this.isAllowedEmail(emailIn.value);
                 if(!allowed) {
                     emailIn.validity.valid = false;
                     emailIn.validity.customError = true;
-                    emailIn.setCustomValidity("Mais... celà n'a pas l'air d'un email pro ceci ?");
-                    console.debug('Email validity:', emailIn.validity);
+                    this.isNotProEmail = true;
                 }
                 else {
                     emailIn.validity.valid = true;
                     emailIn.validity.customError = false;
                     emailIn.setCustomValidity("");
                     console.debug(`Let's go for ${emailIn.value}:`, emailIn.validity);
+                    this.isNotEmail = false;
+                    this.isNotProEmail = false;
                     this.submitReady = true;
                 }
             }
-            else {
-                console.debug(`The ${emailIn.value} email is invalid:`, emailIn.validity);
-            }
-        },
-        validInput: function(input) {
-            input.checkValidity();
-            if(!input.validity.valid) {
-                if(input.validity.typeMismatch) {
-                    input.setCustomValidity("Mais... ça ne ressemble pas à un email ça ?");
-                }
-                else if(input.validity.customError) {
-                    input.setCustomValidity("Heu... cet email a un problème !");
-                }
-            }
-            return input.validity;
         },
         toggle: function() {
             if(this.isOpen)
@@ -124,54 +119,12 @@ var orderVue = new Vue({
                 return false;
             else
                 return true;
+        },
+        digest: function(data) {
+            console.debug('Order - digest data: ', data);
+            this.name = data.name;
+            this.label = data.label;
         }
-        // dragstartItem(e) {
-        //     console.debug('dragstartItem...', e);
-        //     this.dragSource = e.target;
-        //     e.dataTransfer.effectAllowed = 'move';
-        //     e.dataTransfer.setData('text/html', this.outerHTML);
-        //     e.target.classList.add('dragging');
-        // },
-        // dragenterItem(e) {
-        //     console.debug('dragenterItem...', e);
-        //     if(e.traget)
-        //         this.dropSource = e.traget;
-        // },
-        // dragoverItem(e) {
-        //     console.debug('dragoverItem...', e);
-        //     if (e.preventDefault) { e.preventDefault(); }
-        //     if(this.dropSource && this.dropSource.classList.contains('order-item')) {
-        //         this.dropSource.classList.add('dragover');
-        //         e.dataTransfer.dropEffect = 'move';
-        //     }
-        //     return false;
-        // },
-        // dragleaveItem(e) {
-        //     console.debug('dragleaveItem...', e);
-        //     if(this.dropSource)
-        //         this.dropSource.classList.remove('dragover');
-        // },
-        // dropItem(e) {
-        //     console.debug('dropItem...', e);
-        //     if (e.stopPropagation) {
-        //         e.stopPropagation(); // Stops some browsers from redirecting.
-        //     }
-        //     // Don't do anything if dropping the same column we're dragging.
-        //     if(this.dropSource) {
-        //         if (this.dragSource != this.dropSource && this.dropSource.classList.contains('order-item')) {
-        //             // Set the source column's HTML to the HTML of the column we dropped on.
-        //             this.dragSource.innerHTML = this.dropSource.innerHTML;
-        //             this.dropSource.innerHTML = e.dataTransfer.getData('text/html');
-        //         }
-        //         this.dropSource.classList.remove('dragover');
-        //     }
-        //     return false;
-        // },
-        // dragendItem(e) {
-        //     console.debug('dragendItem...', e);
-        //     if(this.dragSource)
-        //         this.dragSource.classList.remove('dragging');
-        // },
     },
     watch: {
         // Watch for duration for animate number

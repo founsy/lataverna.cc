@@ -80,6 +80,8 @@ header .duration { color: #D9233D; font-family: "coquette",sans-serif; font-weig
 .orderlist-enter-active, .orderlist-leave-active { opacity: 1; }
 .orderlist-enter, .orderlist-leave-to { opacity: 0; transform: translateX(40px); transition: all 1s; }
 
+.input-error { color: #de2845; }
+
 @media (min-width: 768px) {
 }
 

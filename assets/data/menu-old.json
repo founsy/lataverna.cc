@@ -1,8 +1,10 @@
 {
+    "title": "La Taverna CC",
+    "lang": "es",
     "today": [
       {
           "id": "news",
-          "label": "Les nouveautés pêchées du matin",
+          "label": "Las actualidades de la mañana",
           "desc": "Haec dum oriens diu perferret, caeli reserato tepore Constantius consulatu suo septies et Caesaris ter egressus Arelate Valentiam petit, in Gundomadum et Vadomarium fratres Alamannorum reges arma moturus, quorum crebris excursibus vastabantur confines limitibus terrae Gallorum.",
           "duration": 60
       }
@@ -10,7 +12,7 @@
     "discovery": [
         {
             "id": "platform",
-            "label": "La plateforme Creative Cloud",
+            "label": "La plataforma Creative Cloud",
             "desc": "Creative Cloud donne accès à l'ensemble des applications Adobe pour postes de travail et terminaux mobiles, qu'il s'agisse des incontournables tels que Photoshop CC ou d'outils de nouvelle génération comme Adobe XD CC. Bénéficiez également de modèles intégrés pour gagner du temps au début de vos projets, ainsi que de tutoriels détaillés pour affiner vos compétences et être rapidement opérationnel. Cette solution vous offre tout ce dont vous avez besoin pour créer, collaborer et trouver l'inspiration.",
             "duration": 30,
             "video": "assets/media/4bc64b06-1ff9-4814-96dc-3d49d3866857_20171019092126.854x480at800_vp8.webm",
@@ -19,32 +21,32 @@
         },
         {
             "id": "mobile",
-            "label": "Les applications mobiles",
+            "label": "Las aplicaciones móviles",
             "desc": "Les idées géniales peuvent surgir n'importe où. Et grâce aux applications mobiles Adobe, les chefs d'œuvre aussi. Esquissez, dessinez, peignez, élaborez des mises en page, retouchez des photos et créez des vidéos avec les applications mobiles Adobe. Avec Adobe CreativeSync, toutes vos applications et ressources sont connectées sur votre poste de travail et vos appareils mobiles. Vous créez ainsi de remarquables projets, où que vous soyez.",
             "duration": 20,
             "poster": "assets/media/mobile-catalog-marquee.jpg"
         },
         {
             "id": "desktop",
-            "label": "Les applications desktop",
+            "label": "Los aplicationes desktop",
             "desc": "Nunc vero inanes flatus quorundam vile esse quicquid extra urbis pomerium nascitur aestimant praeter orbos et caelibes, nec credi potest qua obsequiorum diversitate coluntur homines sine liberis Romae.",
             "duration": 20
         },
         {
             "id": "collaborative",
-            "label": "Les services collaboratifs",
+            "label": "Los servicios colaborativos",
             "desc": "Eodem tempore Serenianus ex duce, cuius ignavia populatam in Phoenice Celsen ante rettulimus, pulsatae maiestatis imperii reus iure postulatus ac lege, incertum qua potuit suffragatione absolvi, aperte convictus familiarem suum cum pileo, quo caput operiebat, incantato vetitis artibus ad templum misisse fatidicum, quaeritatum expresse an ei firmum portenderetur imperium, ut cupiebat, et cunctum.",
             "duration": 30
         },
         {
             "id": "resources",
-            "label": "Les services de ressources",
+            "label": "Los servicios de recursos",
             "desc": "Eodem tempore Serenianus ex duce, cuius ignavia populatam in Phoenice Celsen ante rettulimus, pulsatae maiestatis imperii reus iure postulatus ac lege, incertum qua potuit suffragatione absolvi, aperte convictus familiarem suum cum pileo, quo caput operiebat, incantato vetitis artibus ad templum misisse fatidicum, quaeritatum expresse an ei firmum portenderetur imperium, ut cupiebat, et cunctum.",
             "duration": 30
         },
         {
             "id": "community",
-            "label": "Les services communautaires",
+            "label": "Los servicios communidadores",
             "desc": "Saraceni tamen nec amici nobis umquam nec hostes optandi, ultro citroque discursantes quicquid inveniri poterat momento temporis parvi vastabant milvorum rapacium similes, qui si praedam dispexerint celsius, volatu rapiunt celeri, aut nisi impetraverint, non inmorantur.",
             "duration": 10
         }
@@ -52,25 +54,25 @@
     "alacarte": [
         {
             "id": "illustration",
-            "label": "L'illustration",
+            "label": "L'illustracìon",
             "desc": "Sed si ille hac tam eximia fortuna propter utilitatem rei publicae frui non properat, ut omnia illa conficiat, quid ego, senator, facere debeo, quem, etiamsi ille aliud vellet, rei publicae consulere oporteret?",
             "duration": 30
         },
         {
             "id": "photo",
-            "label": "La photographie",
+            "label": "La fotografìa",
             "desc": "Haec ubi latius fama vulgasset missaeque relationes adsiduae Gallum Caesarem permovissent, quoniam magister equitum longius ea tempestate distinebatur, iussus comes orientis Nebridius contractis undique militaribus copiis ad eximendam periculo civitatem amplam et oportunam studio properabat ingenti, quo cognito abscessere latrones nulla re amplius memorabili gesta, dispersique ut solent avia montium petiere celsorum.",
             "duration": 30
         },
         {
             "id": "painting",
-            "label": "La peinture numérique",
+            "label": "La pintura digital",
             "desc": "Sed (saepe enim redeo ad Scipionem, cuius omnis sermo erat de amicitia) querebatur, quod omnibus in rebus homines diligentiores essent; capras et oves quot quisque haberet, dicere posse, amicos quot haberet, non posse dicere et in illis quidem parandis adhibere curam, in amicis eligendis neglegentis esse nec habere quasi signa quaedam et notas, quibus eos qui ad amicitias essent idonei, iudicarent. Sunt igitur firmi et stabiles et constantes eligendi; cuius generis est magna penuria. Et iudicare difficile est sane nisi expertum; experiendum autem est in ipsa amicitia. Ita praecurrit amicitia iudicium tollitque experiendi potestatem.",
             "duration": 30
         },
         {
             "id": "artdirection",
-            "label": "La direction artistique",
+            "label": "La direccìon artistica",
             "desc": "Et prima post Osdroenam quam, ut dictum est, ab hac descriptione discrevimus, Commagena, nunc Euphratensis, clementer adsurgit, Hierapoli, vetere Nino et Samosata civitatibus amplis inlustris.",
             "duration": 30
         },

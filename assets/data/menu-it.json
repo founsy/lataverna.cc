@@ -1,0 +1,85 @@
+{
+    "@context": {
+        "@vocab": "http://schema.org",
+        "language": "it"
+    },
+    "@type": "Menu",
+    "identifier": "lataverna-menu",
+    "name": "Menu • La Taverna CC",
+    "description": "La Taverna CC - Il menu",
+    "hasMenuSection": [
+        {
+            "@type": "MenuSection",
+            "identifier": "today-section",
+            "name": "Formula del giorno",
+            "hasMenuItem": [
+                {
+                    "@type": "MenuItem",
+                    "identifier": "news",
+                    "name": "Nuove, fresche pesche questa mattina",
+                    "description": "Haec dum oriens diu perferret, caeli reserato tepore Constantius consulatu suo septies et Caesaris ter egressus Arelate Valentiam petit, in Gundomadum et Vadomarium fratres Alamannorum reges arma moturus, quorum crebris excursibus vastabantur confines limitibus terrae Gallorum.",
+                    "duration": 60
+                }
+            ]
+        },
+        {
+            "@type": "MenuSection",
+            "identifier": "discovery-section",
+            "name": "Formula di prima scoperta",
+            "hasMenuItem": [
+                {
+                    "@type": "MenuItem",
+                    "identifier": "platform",
+                    "name": "La piattaforma Creative Cloud",
+                    "description": "Creative Cloud fornisce l'accesso a tutte le applicazioni Adobe per desktop e dispositivi mobili, sia che si tratti di elementi essenziali come Photoshop CC o strumenti di prossima generazione come Adobe XD CC. Inoltre, beneficia di modelli integrati per risparmiare tempo all'inizio dei tuoi progetti, oltre a tutorial dettagliati per affinare le tue abilità e essere subito operativi. Questa soluzione ti offre tutto il necessario per creare, collaborare e trovare ispirazione.",
+                    "duration": 30,
+                    "video": "assets/media/4bc64b06-1ff9-4814-96dc-3d49d3866857_20171019092126.854x480at800_vp8.webm",
+                    "image": "assets/media/4f3b4031_960x540.jpg"
+                },
+                {
+                    "@type": "MenuItem",
+                    "identifier": "mobile",
+                    "name": "app mobili",
+                    "description": "Grandi idee possono apparire ovunque. E grazie alle app per dispositivi mobili Adobe, anche i capolavori. Disegna, disegna, dipingi, costruisci layout, modifica foto e crea video con le app mobili Adobe. Con Adobe CreativeSync, tutte le tue app e risorse sono collegate al tuo desktop e ai tuoi dispositivi mobili. Crei progetti straordinari ovunque tu sia.",
+                    "duration": 20,
+                    "image": "assets/media/mobile-catalog-marquee.jpg"
+                },
+                {
+                    "@type": "MenuItem",
+                    "identifier": "collaborative",
+                    "name": "servizi collaborativi",
+                    "description": "Eodem tempore Serenianus ex duce, cuius ignavia populatam in Phoenice Celsen ante rettulimus, pulsatae maiestatis imperii reus iure postulatus ac lege, incertum qua potuit suffragatione absolvi, aperte convictus familiarem suum cum pileo, quo caput operiebat, incantato vetitis artibus ad templum misisse fatidicum, quaeritatum expresse an ei firmum portenderetur imperium, ut cupiebat, et cunctum.",
+                    "duration": 30
+                }
+            ]
+        },
+        {
+            "@type": "MenuSection",
+            "identifier": "card-section",
+            "name": "Formula à la carte",
+            "hasMenuItem": [
+                {
+                    "@type": "MenuItem",
+                    "identifier": "illustration",
+                    "name": "l'illustrazione",
+                    "description": "Sed si ille hac tam eximia fortuna propter utilitatem rei publicae frui non properat, ut omnia illa conficiat, quid ego, senator, facere debeo, quem, etiamsi ille aliud vellet, rei publicae consulere oporteret?",
+                    "duration": 30
+                },
+                {
+                    "@type": "MenuItem",
+                    "identifier": "photo",
+                    "name": "la fotografia",
+                    "description": "Haec ubi latius fama vulgasset missaeque relationes adsiduae Gallum Caesarem permovissent, quoniam magister equitum longius ea tempestate distinebatur, iussus comes orientis Nebridius contractis undique militaribus copiis ad eximendam periculo civitatem amplam et oportunam studio properabat ingenti, quo cognito abscessere latrones nulla re amplius memorabili gesta, dispersique ut solent avia montium petiere celsorum.",
+                    "duration": 30
+                },
+                {
+                    "@type": "MenuItem",
+                    "identifier": "painting",
+                    "name": "La pittura digitale",
+                    "description": "Sed (saepe enim redeo ad Scipionem, cuius omnis sermo erat de amicitia) querebatur, quod omnibus in rebus homines diligentiores essent; capras et oves quot quisque haberet, dicere posse, amicos quot haberet, non posse dicere et in illis quidem parandis adhibere curam, in amicis eligendis neglegentis esse nec habere quasi signa quaedam et notas, quibus eos qui ad amicitias essent idonei, iudicarent. Sunt igitur firmi et stabiles et constantes eligendi; cuius generis est magna penuria. Et iudicare difficile est sane nisi expertum; experiendum autem est in ipsa amicitia. Ita praecurrit amicitia iudicium tollitque experiendi potestatem.",
+                    "duration": 30
+                }
+            ]
+        }
+    ]
+}

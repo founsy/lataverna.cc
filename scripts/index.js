@@ -9,42 +9,102 @@ importScript('scripts/menu.js');
 importScript('scripts/preview.js');
 importScript('scripts/order.js');
 
-// ------------------------
-// Events
-// ------------------------
-
 // The Event bus
 var EventBus = new Vue({
+    el: '#bus',
+    prefix: 'bus:',
     data: {
-        menu: {
-            url: 'assets/data/menu.json',
-            loaded: false
-        }
+        isWorking: false,
+        lang: 'io',
+        path: 'assets/data/',
+        loaded: false,
+        cache: null
+    },
+    created: function() {
+        this.localize().then(this.dataCallback.bind(this));
     },
     methods: {
-        loadMenuData: function() {
-            // Load menu data
-            fetch(this.menu.url)
-              .then(function(response) { return response.json() })
-              .then(function(data) {
-                  this.menu.loaded = true;
-                  this.menu.cache = data;
-                  EventBus.$emit('menu:dataloaded', data); // listened by menu
-              });
+        dataCallback: function(data) {
+            console.debug('Bus - response data: ', data);
+            this.loaded = true;
+            this.cache = data;
+            this.isWorking = false;
+        },
+        localize: function() {
+            var promise = null;
+            var cachedData = this.cache;
+            if(this.loaded && cachedData !== null) {
+                promise = new Promise(function(resolve, reject) {
+                    resolve(cachedData);
+                });
+                console.debug('Bus - cached data: ', promise);
+            }
+            else {
+                this.isWorking = true;
+                this.lang = this.findLang();
+                var uri = `${this.path}menu-${this.lang}.json`;
+                promise = this.asyncRequest(uri).then(this.requestCallback.bind(this));
+                console.debug('Bus - request at uri: ', promise);
+            }
+            return promise;
+        },
+        requestCallback: function(data) {
+            console.debug('Bus - response data: ', data);
+            this.loaded = true;
+            this.cache = data;
+            this.isWorking = false;
+            return data;
+        },
+        asyncRequest: function(url) {
+            var promise = null;
+            if(this.fetch) {
+                promise = fetch(uri).then(function(response) {
+                    return response.json();
+                });
+            }
+            else {
+                promise = new Promise( function(resolve, reject) {
+                    var xhr = new XMLHttpRequest();
+                    xhr.onload = function(event) {
+                        var data = JSON.parse(xhr.responseText);
+                        resolve(data);
+                    };
+                    xhr.onerror = function(error) {
+                        reject(xhr.statusText);
+                    };
+                    xhr.open("GET", url, true);
+                    xhr.send();
+                });
+            }
+            return promise;
+        },
+        findLang: function() {
+            var lang;
+            // look for URL Params
+            let index = window.location.search.indexOf('lang=');
+            if(index >= 0) {
+              let start = index+5;
+              let stop = start+2;
+              lang = window.location.search.slice(start, stop);
+            }
+            // look document lang attribute
+            else if(document.documentElement.hasAttribute('lang')) {
+                lang = document.documentElement.getAttribute('lang');
+            }
+            // default lang - io
+            else {
+                lang = this.lang;
+            }
+            document.documentElement.setAttribute('lang', lang);
+            console.log('Document lang : ', lang);
+            return lang;
         }
     }
 });
 
-// When data are loaded
-EventBus.$on('menu:dataloaded', function(msg) {
-    console.info('data loaded:', msg);
-    // if(data.alacarte) {
-    //     orderVue.addItem(data.discovery[0]);
-    //     orderVue.addItem(data.discovery[1]);
-    //     orderVue.isOpen = true;
-    // }
-});
-
+// ------------------------
+// Events
+// ------------------------
 // When PreVue is show (or hide)
 EventBus.$on('preview:show', function(msg) {
     if(msg)
@@ -52,23 +112,10 @@ EventBus.$on('preview:show', function(msg) {
     else
         document.body.classList.remove('preview-mode');
 });
-
 // When OrderVue is show (or hide)
 EventBus.$on('order:show', function(msg) {
     if(msg)
         document.body.classList.add('order-mode');
     else
         document.body.classList.remove('order-mode');
-});
-
-// ------------------------
-// Vues
-// ------------------------
-
-// Header of the app
-var headerVue = new Vue({
-  el: 'header',
-  data: {
-    site_title: 'La Taverna CC'
-  }
 });
